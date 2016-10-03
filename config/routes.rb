@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+
+  authenticated :user do
+    root 'articles#index', as: :authenticated_root
+  end
+
   root 'welcome#index'
 
+  resources :articles
+
+  devise_for :users
+
   get 'about' => 'welcome/about'
+
+  resources :users, only: [:show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
