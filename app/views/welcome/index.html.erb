@@ -1,2 +1,32 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<br  />
+<div class="jumbotron">
+  <h1>Encyclo<i>speed</i>ia</h1>
+  <p>
+    A super speedy encyclopedia, curated by you (and everyone else)!
+  </p>
+  <p>
+    <%=link_to "Sign In", new_session_path %> or
+    <%= link_to "Sign Up", new_user_path, class: 'btn btn-primary' %> today!
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Solves the Knowledge Crisis of Today!</h2>
+    <p>
+      Encyclospeedia is on a mission to close the Knowledge Gap!
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h2>Eliminates Real Life Social Interaction!</h2>
+    <p>
+      Who needs a classroom when you have Encyclospeedia?
+    </p>
+  </div>
+  <div class="col-md-4">
+    <h2>Makes you a better person!</h2>
+    <p>
+      Learn everything you could ever know, even information that is utterly fictional!
+    </p>
+  </div>
+</div>
