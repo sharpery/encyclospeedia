@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-4">
+    <p>Guidelines to remember:</p>
+    <ul>
+      <li>Try not to lie too much.</li>
+      <li>Exaggeration is expected.</li>
+      <li>Type as fast as you can.</li>
+    </ul>
+  </div>
+</div>
+
+<%= form_for [@article] do |f| %>
+  <% if @article.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%= pluralize(article.errors.count, "error") %>.</h4>
+      <ul>
+        <% article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@article.errors[:title]) do %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter article title" %>
+  <% end %>
+
+  <%= form_group_tag(@article.errors[:body]) do %>
+    <%= f.label :body %>
+    <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Ender article body" %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
+  </div>
+<% end %>
