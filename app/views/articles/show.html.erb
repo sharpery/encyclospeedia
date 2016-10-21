@@ -12,7 +12,9 @@
   <p class="article-body"><%= simple_format(@article.body) %></p>
 </div>
 <div class="footer">
-  <%= link_to "Edit", edit_article_path(@article), class:'btn btn-success' %>
-  <span class='spacer'></span>
-  <%= link_to "Delete", [@article], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you suer you want to delete this article?'} %>
+  <% if user_is_authorized_for_article?(@article) %>
+    <%= link_to "Edit", edit_article_path(@article), class:'btn btn-success' %>
+    <span class='spacer'></span>
+    <%= link_to "Delete", [@article], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you suer you want to delete this article?'} %>
+  <% end %>
 </div>
