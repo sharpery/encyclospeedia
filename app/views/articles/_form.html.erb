@@ -12,9 +12,9 @@
 <%= form_for [@article] do |f| %>
   <% if @article.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(articles.errors.count, "error") %>.</h4>
+      <h4><%= pluralize(@article.errors.count, "error") %>.</h4>
       <ul>
-        <% article.errors.full_messages.each do |msg| %>
+        <% @article.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
