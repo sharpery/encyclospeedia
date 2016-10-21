@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row" style="margin-left: 20px;">
+  <br />
   <div class="col-md-8">
     <% @articles.each do |article| %>
       <div class="media">
@@ -13,6 +14,7 @@
       </div>
     <% end %>
   </div>
+  <br />
   <div class="col-md-4">
     <%= link_to "New Article", new_article_path, class: 'btn btn-success' %>
   </div>

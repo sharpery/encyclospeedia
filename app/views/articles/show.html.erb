@@ -1,22 +1,18 @@
 <div>
-  <h1>
+  <h2 class="article-heading">
     <%= @article.title %> <br />
     <small>
       created <%= time_ago_in_words(@article.created_at) %> ago by <%=  %>
-      edited <%= time_ago_in_words(@article.created_at) %> ago by <%= %>
     </small>
-  </h1>
+    <br />
+  </h2>
 </div>
-<div class="row">
-  <div class="col-md-8">
-    <p>
-      <%= @article.body %>
-    </p>
-    <div>
-      <div class="col-md-4">
-        <%= link_to "Edit", edit_article_path(@article), class:'btn btn-success' %>
-        <%= link_to "Delete", [@article], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you suer you want to delete this article?'} %>
-      </div>
-    </div>
-  </div>
+<br />
+<div class="col-md-8">
+  <p class="article-body"><%= simple_format(@article.body) %></p>
+</div>
+<div class="footer">
+  <%= link_to "Edit", edit_article_path(@article), class:'btn btn-success' %>
+  <span class='spacer'></span>
+  <%= link_to "Delete", [@article], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you suer you want to delete this article?'} %>
 </div>
