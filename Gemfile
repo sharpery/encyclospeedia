@@ -25,6 +25,8 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+gem 'delayed_job_active_record'
+
 
 # gem 'mailcatcher'
 
