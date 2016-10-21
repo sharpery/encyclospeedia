@@ -25,6 +25,8 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+gem 'pundit'
+
 # gem 'mailcatcher'
 
 # Use ActiveModel has_secure_password
