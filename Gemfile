@@ -27,6 +27,9 @@ gem 'devise'
 
 gem 'delayed_job_active_record'
 
+gem 'pundit'
+
+
 
 # gem 'mailcatcher'
 
